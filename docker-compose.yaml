@@ -1,0 +1,11 @@
+version: "3.3"
+
+services:
+  py:
+    build: .
+    container_name: py
+    volumes:
+      - ./:/usr/src/app:rw,cached
+    working_dir: /usr/src/app
+    ports:
+      - 5678:5678

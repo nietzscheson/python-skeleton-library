@@ -1,0 +1,6 @@
+.dockerignore
+vendor
+.git
+.vscode
+__pycache__
+.gitignore
