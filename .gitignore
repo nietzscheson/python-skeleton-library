@@ -1,8 +1,5 @@
 .DS_Store
-bin/
-composer.lock
-vendor/
 .env
-python_skeleton_library.egg-info
 .tox
 __pycache__/*
+python_skeleton_library.egg-info/*
