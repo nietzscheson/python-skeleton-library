@@ -1,8 +1,4 @@
-FROM python:3.8-alpine AS base
-
-RUN apk add --no-cache --virtual .build-deps \
-    bash \
-    && rm -rf /var/cache/apk/*
+FROM python:3.8 AS base
 
 ENV PYTHONUNBUFFERED 1
 
@@ -14,7 +10,7 @@ RUN pip3 install -e .
 
 FROM base AS dev
 
-RUN pip3 install tox 
+RUN pip3 install tox
 
 FROM base AS debug
 
