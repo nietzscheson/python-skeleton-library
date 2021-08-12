@@ -1,5 +1,4 @@
 class Skeleton:
-
     def getMessage(self):
         return self.message
 

@@ -4,7 +4,6 @@ from unittest.mock import MagicMock
 
 
 class ResponseGetterTestCase(unittest.TestCase):
-
     def test_response_getter(self):
         requestObject = ResponseGetter()
         requestObject.retrieveStatusCode = MagicMock(return_value=200)
@@ -12,5 +11,5 @@ class ResponseGetterTestCase(unittest.TestCase):
         self.assertEqual(200, responseStatus)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
