@@ -14,3 +14,7 @@ logs:
 	docker-compose logs
 tox:
 	docker-compose run --rm py tox
+prune:
+	make down
+	docker volume prune -f
+	docker system prune -f
