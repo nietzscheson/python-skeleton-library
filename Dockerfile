@@ -1,6 +1,8 @@
-FROM python:3.8 AS base
+FROM python:3.9 AS base
 
 ENV PYTHONUNBUFFERED 1
+
+RUN pip3 install --upgrade pip pipenv
 
 WORKDIR /usr/src/app
 
@@ -8,9 +10,13 @@ COPY setup.py .
 
 RUN pip3 install -e . 
 
-FROM base AS dev
+COPY Pipfile* .
 
-RUN pip3 install tox
+RUN pipenv lock
+
+RUN pipenv install --system --deploy --dev
+
+FROM base AS dev
 
 FROM base AS debug
 
