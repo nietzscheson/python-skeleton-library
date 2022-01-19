@@ -1,6 +1,6 @@
 .dockerignore
 vendor
-.git
+# .git
 .vscode
 __pycache__
 .gitignore

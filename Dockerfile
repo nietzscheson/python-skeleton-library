@@ -6,17 +6,23 @@ RUN pip3 install --upgrade pip pipenv
 
 WORKDIR /usr/src/app
 
-COPY setup.py .
+ADD ./setup.py ./Pipfile* ./
 
-RUN pip3 install -e . 
-
-COPY Pipfile* .
+RUN pip3 install -e .
 
 RUN pipenv lock
 
 RUN pipenv install --system --deploy --dev
 
 FROM base AS dev
+
+# RUN chmod 755 entrypoint.sh
+
+ADD ./entrypoint.sh ./
+
+ENTRYPOINT ["sh","./entrypoint.sh" ]
+
+# RUN ./pre-commit.sh
 
 FROM base AS debug
 
