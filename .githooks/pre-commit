@@ -1,0 +1,3 @@
+#!/bin/bash
+
+exec docker-compose run --rm core pre-commit hook-impl --config=.pre-commit-config.yaml --hook-type=pre-commit --hook-dir /core/.githooks --

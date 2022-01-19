@@ -1,11 +1,12 @@
-version: "3.3"
+version: "3.9"
 
 services:
-  py:
+  core:
     build:
       context: .
       target: dev
-    container_name: py
+    container_name: core
     volumes:
       - ./:/usr/src/app:rw,cached
-    working_dir: /usr/src/app
+      - ./.git:/tmp/.git
+      - ./.githooks:/tmp/.githooks

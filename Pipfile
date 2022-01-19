@@ -7,6 +7,10 @@ name = "pypi"
 
 [dev-packages]
 tox = "==3.24.5"
+pre-commit = "==2.17.0"
+black = "==21.12b0"
+isort = "==5.10.1"
+flake8 = "==4.0.1"
 
 [requires]
 python_version = "3.9"
