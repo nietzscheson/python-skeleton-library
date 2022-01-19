@@ -16,13 +16,9 @@ RUN pipenv install --system --deploy --dev
 
 FROM base AS dev
 
-# RUN chmod 755 entrypoint.sh
-
 ADD ./entrypoint.sh ./
 
 ENTRYPOINT ["sh","./entrypoint.sh" ]
-
-# RUN ./pre-commit.sh
 
 FROM base AS debug
 

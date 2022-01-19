@@ -15,7 +15,14 @@ repos:
     - id: isort
       name: isort (python)
 -   repo: https://github.com/pycqa/flake8
-    rev: ''  # pick a git hash / tag to point to
+    rev: ''
     hooks:
     -   id: flake8
         exclude: ^test/
+-   repo: local
+    hooks:
+    -   id: safety
+        name: safety
+        language: system
+        entry: safety check -r setup.py
+        pass_filenames: false
