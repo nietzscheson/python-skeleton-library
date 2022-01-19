@@ -18,3 +18,9 @@ prune:
 	make down
 	docker volume prune -f
 	docker system prune -f
+check:
+	@docker-compose run --rm core python setup.py check -m -s && black . && black . --check
+	@docker-compose run --rm core flake8 .
+test:
+	docker-compose run --rm core coverage run -m unittest discover
+	docker-compose run --rm core coverage report -m
