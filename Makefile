@@ -12,8 +12,6 @@ down:
 	docker-compose down -v --remove-orphans
 logs:
 	docker-compose logs
-tox:
-	docker-compose run --rm core tox
 prune:
 	make down
 	docker volume prune -f
