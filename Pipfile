@@ -12,6 +12,7 @@ black = "==21.12b0"
 isort = "==5.10.1"
 flake8 = "==4.0.1"
 safety= "==1.10.3"
+coverage = "==6.2"
 
 [requires]
 python_version = "3.9"
