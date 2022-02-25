@@ -10,3 +10,4 @@ services:
       - ./:/usr/src/app:rw,cached
       - ./.git:/tmp/.git
       - ./.githooks:/tmp/.githooks
+      - ./.pre-commit:/root/.cache/pre-commit/
