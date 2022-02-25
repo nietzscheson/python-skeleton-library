@@ -1,7 +1,7 @@
 #!/bin/sh
 
-cd /tmp/.githooks && ls | xargs chmod +x && cd /tmp/.git/hooks && find ../../.githooks -type f -exec ln -sf {} /tmp/.git/hooks/ \; && echo 'githooks installed'
+set -e
 
-cd /usr/src/app
+find /tmp/.git/hooks -type l -exec rm {} \; && find /tmp/.githooks -type f -exec ln -sf ../../{} /tmp/.git/hooks/ \; && echo 'githooks installed'
 
 exec "$@"

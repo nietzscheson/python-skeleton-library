@@ -1,6 +1,7 @@
 import unittest
-from src.response_getter import ResponseGetter
 from unittest.mock import MagicMock
+
+from src.response_getter import ResponseGetter
 
 
 class ResponseGetterTestCase(unittest.TestCase):
