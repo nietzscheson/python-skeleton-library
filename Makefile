@@ -24,3 +24,5 @@ check:
 test:
 	docker-compose run --rm core coverage run -m unittest discover
 	docker-compose run --rm core coverage report -m
+poetry.update:
+	docker-compose run --rm core poetry update

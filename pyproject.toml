@@ -6,6 +6,7 @@ authors = ["Cristian Angulo <cristianangulonova@gmail.com, cristian@nietzscheson
 
 [tool.poetry.dependencies]
 python = "3.9.14"
+Flask = "^2.2.2"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.1.2"
