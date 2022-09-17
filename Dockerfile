@@ -1,20 +1,20 @@
-FROM python:3.9 AS base
+FROM python:3.9.14 AS base
 
 ENV PYTHONUNBUFFERED 1
 
-RUN pip3 install --upgrade pip pipenv
+RUN pip3 install --upgrade pip pipenv poetry==1.2.0
 
 WORKDIR /usr/src/app
 
-ADD ./setup.py ./Pipfile* ./
+COPY poetry.lock pyproject.toml ./
 
-RUN pip3 install -e .
+RUN poetry config virtualenvs.create false
 
-RUN pipenv lock
-
-RUN pipenv install --system --deploy --dev
+RUN poetry install --no-root --no-dev
 
 FROM base AS dev
+
+RUN poetry install
 
 ADD ./entrypoint.sh ./
 
