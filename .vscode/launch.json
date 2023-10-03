@@ -4,13 +4,14 @@
         "name": "Remote Debug",
         "type": "python",
         "request": "attach",
-        "preLaunchTask": "docker-compose-up",
-        "port": 5678,
-        "host": "0.0.0.0",
+        "connect": {
+          "port": 5678,
+          "host": "0.0.0.0",
+        },
         "pathMappings": [
           {
             "localRoot": "${workspaceFolder}",
-            "remoteRoot": "/usr/src/app"
+            "remoteRoot": "."
           }
         ],
         "logToFile": true

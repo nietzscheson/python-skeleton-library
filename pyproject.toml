@@ -5,13 +5,13 @@ description = "Python Skeleton Library"
 authors = ["Cristian Angulo <cristianangulonova@gmail.com, cristian@nietzscheson.com>"]
 
 [tool.poetry.dependencies]
-python = "3.9.14"
+python = "3.10.11"
 Flask = "^2.2.2"
 
-[tool.poetry.group.dev.dependencies]
-pytest = "^7.1.2"
-factory-boy = "^3.2.1"
 
+[tool.poetry.group.dev.dependencies]
+factory-boy = "^3.2.1"
+pytest = "^7.4.2"
 
 [tool.poetry.group.lint.dependencies]
 tox = "==3.24.5"
